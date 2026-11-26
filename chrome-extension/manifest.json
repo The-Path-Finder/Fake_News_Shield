@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "Fake News Shield",
+  "version": "1.0.0",
+  "description": "Real-Time Multilingual Misinformation & Fake News Shield. Scan news articles using the FastAPI NLP backend.",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "host_permissions": ["http://localhost:8000/*", "http://127.0.0.1:8000/*", "https://*/*"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Fake News Shield"
+  }
+}
