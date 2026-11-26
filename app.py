@@ -375,13 +375,12 @@ with col_left:
         else:
             prep = preprocess_multilingual(news_text)
             cleaned_display = prep["cleaned_text"]
-            model_input = prep["model_input_text"]
 
             if not cleaned_display:
                 st.warning("No meaningful text found after spaCy preprocessing.")
             else:
-                transformed = tfidf.transform([model_input]) if model_input else None
-                matched_features = int(transformed.nnz) if transformed is not None else 0
+                transformed = tfidf.transform([cleaned_display])
+                matched_features = int(transformed.nnz)
 
                 if transformed is None or matched_features < MIN_MATCHED_FEATURES:
                     label = "Low Confidence"

@@ -87,13 +87,12 @@ def predict_news(payload: PredictRequest):
 
     prep = preprocess_multilingual(raw_text)
     cleaned_display = prep["cleaned_text"]
-    model_input = prep["model_input_text"]
 
     if not cleaned_display:
         raise HTTPException(status_code=400, detail="No meaningful text found after spaCy preprocessing.")
 
-    transformed = tfidf.transform([model_input]) if model_input else None
-    matched_features = int(transformed.nnz) if transformed is not None else 0
+    transformed = tfidf.transform([cleaned_display])
+    matched_features = int(transformed.nnz)
 
     if transformed is None or matched_features < MIN_MATCHED_FEATURES:
         recommendation = (
