@@ -1,0 +1,143 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 350px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #f6f4ef;
+  color: #141413;
+  padding: 16px;
+}
+
+.header {
+  border-bottom: 2px solid #141413;
+  padding-bottom: 10px;
+  margin-bottom: 14px;
+}
+
+.kicker {
+  font-family: ui-monospace, SFMono-Regular, monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #57534e;
+}
+
+.header h1 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #141413;
+  margin-top: 2px;
+}
+
+.field {
+  margin-bottom: 12px;
+}
+
+.field label {
+  display: block;
+  font-family: ui-monospace, SFMono-Regular, monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #57534e;
+  margin-bottom: 4px;
+}
+
+.field input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #d6d3cb;
+  background: #ffffff;
+  color: #141413;
+  font-size: 12.5px;
+}
+
+.scan-btn {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #141413;
+  background: #141413;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.scan-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.status {
+  margin-top: 10px;
+  font-family: ui-monospace, SFMono-Regular, monospace;
+  font-size: 11.5px;
+  color: #57534e;
+}
+
+.result-card {
+  margin-top: 14px;
+  padding: 12px;
+  background: #ffffff;
+  border: 1px solid #d6d3cb;
+}
+
+.result-card.low {
+  border-left: 3px solid #166534;
+}
+
+.result-card.high {
+  border-left: 3px solid #991b1b;
+}
+
+.result-card.uncertain {
+  border-left: 3px solid #92400e;
+}
+
+.result-label {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.result-card.low .result-label {
+  color: #166534;
+}
+
+.result-card.high .result-label {
+  color: #991b1b;
+}
+
+.result-card.uncertain .result-label {
+  color: #92400e;
+}
+
+.result-meta {
+  font-family: ui-monospace, SFMono-Regular, monospace;
+  font-size: 11px;
+  color: #57534e;
+  margin-bottom: 8px;
+}
+
+.result-rec {
+  font-size: 12.5px;
+  line-height: 1.45;
+  margin-bottom: 8px;
+}
+
+.disclaimer {
+  font-size: 11px;
+  color: #78716c;
+  border-top: 1px solid #d6d3cb;
+  padding-top: 8px;
+}
+
+.hidden {
+  display: none;
+}

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fake News Shield</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="kicker">Verification Extension</div>
+        <h1>Fake News Shield</h1>
+      </header>
+
+      <div class="field">
+        <label for="apiUrl">FastAPI Endpoint</label>
+        <input id="apiUrl" type="url" value="http://localhost:8000" />
+      </div>
+
+      <button id="scanBtn" class="scan-btn">Scan This Article</button>
+
+      <div id="status" class="status hidden"></div>
+
+      <div id="resultCard" class="result-card hidden">
+        <div id="resultLabel" class="result-label"></div>
+        <div id="resultMeta" class="result-meta"></div>
+        <p id="resultRec" class="result-rec"></p>
+        <p id="resultDisclaimer" class="disclaimer"></p>
+      </div>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>
