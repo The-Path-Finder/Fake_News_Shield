@@ -361,14 +361,13 @@ with col_left:
         height=260,
     )
 
-    btn_col1, btn_col2 = st.columns([1, 2])
-    clear_clicked = btn_col1.button("Clear", use_container_width=True)
-    predict_clicked = btn_col2.button("Run Classification", type="primary", use_container_width=True)
-
-    if clear_clicked:
+    def clear_input():
         st.session_state["news_input"] = ""
         st.session_state.pop("last_result", None)
-        st.rerun()
+
+    btn_col1, btn_col2 = st.columns([1, 2])
+    btn_col1.button("Clear", on_click=clear_input, use_container_width=True)
+    predict_clicked = btn_col2.button("Run Classification", type="primary", use_container_width=True)
 
     if predict_clicked:
         if not news_text.strip():
