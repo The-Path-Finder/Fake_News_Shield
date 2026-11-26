@@ -5,7 +5,7 @@
 }
 
 body {
-  width: 350px;
+  width: 360px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   background: #f6f4ef;
   color: #141413;
@@ -13,9 +13,13 @@ body {
 }
 
 .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 8px;
   border-bottom: 2px solid #141413;
   padding-bottom: 10px;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 
 .kicker {
@@ -34,8 +38,43 @@ body {
   margin-top: 2px;
 }
 
-.field {
+.health-badge {
+  font-family: ui-monospace, SFMono-Regular, monospace;
+  font-size: 10px;
+  padding: 3px 7px;
+  border: 1px solid #d6d3cb;
+  background: #ffffff;
+  color: #57534e;
+  white-space: nowrap;
+}
+
+.health-badge.online {
+  color: #166534;
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+}
+
+.health-badge.offline {
+  color: #991b1b;
+  background: #fef2f2;
+  border-color: #fecaca;
+}
+
+.settings {
   margin-bottom: 12px;
+}
+
+.settings summary {
+  font-family: ui-monospace, SFMono-Regular, monospace;
+  font-size: 11px;
+  color: #57534e;
+  cursor: pointer;
+  user-select: none;
+  margin-bottom: 6px;
+}
+
+.field {
+  margin-top: 6px;
 }
 
 .field label {
@@ -66,6 +105,11 @@ body {
   font-size: 13px;
   font-weight: 600;
   cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.scan-btn:hover:not(:disabled) {
+  background: #292524;
 }
 
 .scan-btn:disabled {
@@ -82,7 +126,7 @@ body {
 
 .result-card {
   margin-top: 14px;
-  padding: 12px;
+  padding: 13px;
   background: #ffffff;
   border: 1px solid #d6d3cb;
 }
@@ -99,11 +143,24 @@ body {
   border-left: 3px solid #92400e;
 }
 
+.result-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+}
+
 .result-label {
   font-family: Georgia, 'Times New Roman', serif;
   font-size: 17px;
   font-weight: 700;
-  margin-bottom: 4px;
+}
+
+.result-pct {
+  font-family: ui-monospace, SFMono-Regular, monospace;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #141413;
 }
 
 .result-card.low .result-label {
@@ -116,6 +173,31 @@ body {
 
 .result-card.uncertain .result-label {
   color: #92400e;
+}
+
+.meter-track {
+  height: 5px;
+  background: rgba(20, 20, 19, 0.1);
+  width: 100%;
+  margin: 8px 0;
+}
+
+.meter-fill {
+  height: 100%;
+  width: 0%;
+  transition: width 0.25s ease;
+}
+
+.result-card.low .meter-fill {
+  background: #166534;
+}
+
+.result-card.high .meter-fill {
+  background: #991b1b;
+}
+
+.result-card.uncertain .meter-fill {
+  background: #92400e;
 }
 
 .result-meta {
@@ -136,6 +218,7 @@ body {
   color: #78716c;
   border-top: 1px solid #d6d3cb;
   padding-top: 8px;
+  line-height: 1.4;
 }
 
 .hidden {

@@ -9,21 +9,33 @@
   <body>
     <div class="container">
       <header class="header">
-        <div class="kicker">Verification Extension</div>
-        <h1>Fake News Shield</h1>
+        <div>
+          <div class="kicker">Verification Extension</div>
+          <h1>Fake News Shield</h1>
+        </div>
+        <span id="healthBadge" class="health-badge checking">Checking...</span>
       </header>
 
-      <div class="field">
-        <label for="apiUrl">FastAPI Endpoint</label>
-        <input id="apiUrl" type="url" value="http://localhost:8000" />
-      </div>
+      <details class="settings">
+        <summary>API Settings</summary>
+        <div class="field">
+          <label for="apiUrl">FastAPI Endpoint</label>
+          <input id="apiUrl" type="url" value="http://localhost:8000" />
+        </div>
+      </details>
 
       <button id="scanBtn" class="scan-btn">Scan This Article</button>
 
       <div id="status" class="status hidden"></div>
 
       <div id="resultCard" class="result-card hidden">
-        <div id="resultLabel" class="result-label"></div>
+        <div class="result-top">
+          <div id="resultLabel" class="result-label"></div>
+          <div id="resultConfidence" class="result-pct"></div>
+        </div>
+        <div class="meter-track">
+          <div id="meterFill" class="meter-fill"></div>
+        </div>
         <div id="resultMeta" class="result-meta"></div>
         <p id="resultRec" class="result-rec"></p>
         <p id="resultDisclaimer" class="disclaimer"></p>
