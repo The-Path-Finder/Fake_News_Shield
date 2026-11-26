@@ -1,6 +1,10 @@
 streamlit
 scikit-learn
 joblib
-nltk
+spacy
 numpy
 scipy
+fastapi
+uvicorn
+langdetect
+pydantic
